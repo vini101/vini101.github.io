@@ -1,84 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
+<h1 id="informatikklausur">Informatikklausur</h1>
+<hr>
+<h1 id="erste-aufgabe-sortierverfahren">Erste Aufgabe: Sortierverfahren</h1>
+<h3 id="1-insertionsort-">1.) Insertionsort:</h3>
+<pre><code>Tauscht von oben nach unten
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Section links</title>
+Funktion <span class="hljs-keyword">InsertionSort(A)
+</span>    Für i von <span class="hljs-number">1</span> <span class="hljs-keyword">bis </span>Länge von A - <span class="hljs-number">1</span>: 
+        <span class="hljs-keyword">j </span>= i
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+        Während <span class="hljs-keyword">j </span>&gt; <span class="hljs-number">0</span> &amp;&amp; A[<span class="hljs-keyword">j-1] </span>&gt; A[<span class="hljs-keyword">j]:
+</span>            Tausche(A[<span class="hljs-keyword">j-1], </span>A[<span class="hljs-keyword">j])
+</span>            <span class="hljs-keyword">j </span>= <span class="hljs-keyword">j </span>- <span class="hljs-number">1</span>
 
-    body {
-      width: 100vw;
-      height: 100vh;
-    }
+        Rückgabe A
+</code></pre><h3 id="2-selectionsort-">2.) Selectionsort:</h3>
+<pre><code>Sucht das Minimale Element und Tauscht das unterste mit diesem. 
 
-    .section {
-      width: 100vw;
-      height: 40vh;
-      background-color: #EF5354;
-      font-size: 50px;
-      color: white;
-      text-align: center;
-      margin: 10px 5px;
-    }
+Funktion Selectionsort(A)
+    Für <span class="hljs-selector-tag">i</span> von <span class="hljs-number">0</span> bis Länge von A-<span class="hljs-number">1</span>:
+        min = <span class="hljs-selector-tag">i</span>
 
-    .one,
-    .three {
-      background-color: #E03B8B;
-    }
+        Für j von <span class="hljs-selector-tag">i</span> bis Länge von A:
+            Falls A[i] &lt; A[min]:
+                min = <span class="hljs-selector-tag">i</span>
 
-    .nav {
-      width: 100vw;
-      height: 40vh;
-      background-color: #3944F7;
-      font-size: x-large;
-      color: white;
-      text-align: center;
-      margin: 10px 5px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      place-items: center;
-    }
+        Falls min != <span class="hljs-selector-tag">i</span>:
+            Tausche(A[i], A[min])
 
-    .btn {
-      color: white;
-      background-color: #38CC77;
-      height: 40px;
-      width: 90px;
-      padding: 2px;
-      border: 2px solid black;
-      text-decoration: none;
-    }
-  </style>
-</head>
+    Rückgabe A
+</code></pre><h3 id="3-bubblesort-">3.) Bubblesort:</h3>
+<pre><code>Tauscht von untent nach oben Elemente durch 
 
-<body>
-  <div class="nav">
-    <a href="#section1" class="btn">1</a>
-    <a href="#section2" class="btn">2</a>
-    <a href="#section3" class="btn">3</a>
-    <a href="#section4" class="btn">4</a>
-  </div>
-  <div class="section one" id="section1">
-    section 1
-  </div>
-  <div class="section two" id="section2">
-    section 2
-  </div>
-  <div class="section three" id="section3">
-    section 3
-  </div>
-  <div class="section four" id="section4">
-    section 4
-  </div>
-</body>
+Funktion BubbleSort(<span class="hljs-keyword">A</span>)
+    Für i von <span class="hljs-number">1</span> bis Länge von <span class="hljs-keyword">A</span>: 
+        Für j von <span class="hljs-number">0</span> bis Länge von <span class="hljs-keyword">A</span> - <span class="hljs-number">1</span>: 
+            Falls <span class="hljs-keyword">A</span>[j] &gt; <span class="hljs-keyword">A</span>[j+<span class="hljs-number">1</span>]
+                Tausche(<span class="hljs-keyword">A</span>[j], <span class="hljs-keyword">A</span>[j+<span class="hljs-number">1</span>])
 
-</html>
+    Rückgabe <span class="hljs-keyword">A</span>
+</code></pre><hr>
+<h1 id="zweite-aufgabe-abstract-data-types">Zweite Aufgabe: Abstract data types</h1>
+<h3 id="1-verkettete-listen-">1.) Verkettete Listen:</h3>
+<pre><code><span class="hljs-keyword">Eine </span>verkettete Liste ist <span class="hljs-keyword">eine </span>dynamische Datenstruktur, in der 
+Datenelemente geordnet gespeichert sind. 
+<span class="hljs-keyword">Die </span>Anzahl an Element darf während der Laufzeit variiert werden.
 
+Sie <span class="hljs-keyword">besteht </span>aus <span class="hljs-keyword">einem </span>Listen&lt;T&gt; Objekt, welches den ersten Knoten 
+speichert und Operationsmethoden implementiert. 
+
+Und aus den ListenKnoten&lt;T&gt; Objekten, welche <span class="hljs-keyword">die </span>Daten speichern und 
+auf den nachfolgenden Knoten verweist. 
+</code></pre><h3 id="2-stack-">2.) Stack:</h3>
+<pre><code><span class="hljs-built_in">Stack</span> ist eine besondere Art der Datenstruktur, sie kann als <span class="hljs-built_in">Array</span> 
+oder verkettete Liste implementiert werden, das ist uns aber relativ 
+egal. 
+
+Das Prinzip von einem <span class="hljs-built_in">Stack</span> ist immer gleich, LIFO: Last <span class="hljs-keyword">in</span> first out
+das Element was man zuletzt auf den <span class="hljs-built_in">Stack</span> gepusht hat ist auch das Element 
+welches als erste den <span class="hljs-built_in">Stack</span> wieder verlässt. 
+Man hat <span class="hljs-number">3</span> elementare Operatoren <span class="hljs-built_in">Stack</span><span class="hljs-type">::top</span>(), <span class="hljs-built_in">Stack</span><span class="hljs-type">::pop</span>() und <span class="hljs-built_in">Stack</span><span class="hljs-type">::push</span>()
+
+Mit <span class="hljs-built_in">Stack</span><span class="hljs-type">::top</span>() kann man sich das oberste Element anschauen.
+Mit <span class="hljs-built_in">Stack</span><span class="hljs-type">::pop</span>() bekommt man das oberste Element und es wird aus dem <span class="hljs-built_in">Stack</span> 
+gelöscht. 
+Mit <span class="hljs-built_in">Stack</span><span class="hljs-type">::push</span>() kann man eine neues Element auf den <span class="hljs-built_in">Stack</span> legen. 
+
+Weiter Operatoren sind.
+<span class="hljs-built_in">Stack</span><span class="hljs-type">::isEmpty</span>() gibt zurück ob der <span class="hljs-built_in">Stack</span> ein Element hat. 
+</code></pre><h3 id="3-queue-">3.) Queue:</h3>
+<pre><code>Selbiges wie oben.
+
+Das Prinzip von einer <span class="hljs-built_in">Queue</span> ist immer gleich, FIFO: First <span class="hljs-keyword">in</span> First out, 
+das Element welches man als erstes <span class="hljs-keyword">in</span> die <span class="hljs-built_in">Queue</span> getan hat ist auch das, 
+welches man zuerst bearbeiten muss.
+Man hat wieder ein paar elementare Operatoren. 
+
+Mit <span class="hljs-built_in">Queue</span><span class="hljs-type">::enqueue</span>() können Daten an die <span class="hljs-built_in">Queue</span> gehängt werden. 
+Mit <span class="hljs-built_in">Queue</span><span class="hljs-type">::dequeue</span>() können Daten von der <span class="hljs-built_in">Queue</span> genommen werden. 
+</code></pre><hr>
+<h1 id="dritte-aufgabe-b-ume-">Dritte Aufgabe Bäume:</h1>
+<h3 id="1-b-ume-">1.) Bäume:</h3>
+<pre><code><span class="hljs-keyword">Ein </span><span class="hljs-keyword">Baum </span><span class="hljs-keyword">besitzt </span>im Gegensatz zu Listen <span class="hljs-keyword">eine </span>verzweigte Struktur, <span class="hljs-keyword">eine </span>
+<span class="hljs-keyword">Baumstruktur. </span>
+
+<span class="hljs-keyword">Jedes </span>Element kann mehrere Nachfolgerelement haben, aber nur <span class="hljs-keyword">eine </span>
+Vorgängerelement. 
+<span class="hljs-symbol">
+Besonderheiten:</span> 
+    <span class="hljs-keyword">Die </span>Wurzel des <span class="hljs-keyword">Baumes </span>hat keinen Vorgänger
+    Knoten ohne Nachfolger werden <span class="hljs-keyword">Blätter </span>genannt
+    Knoten, <span class="hljs-keyword">die </span>werde Wurzel noch <span class="hljs-keyword">Blatt </span>sind, heißen innere Knoten
+
+<span class="hljs-keyword">Ein </span>paar <span class="hljs-keyword">Eigenschaften </span>von <span class="hljs-keyword">Bäumen </span>sollte man sich merken. 
+    - Anzahl der Elemente: <span class="hljs-keyword">Jeder </span><span class="hljs-keyword">Baum </span>hat <span class="hljs-number">1</span> Element plus <span class="hljs-keyword">die </span>Anzahl 
+    der Elemente in seinen Kindener 
+    - Tiefe: <span class="hljs-keyword">Die </span>Anzahl der <span class="hljs-string">"Schichten"</span>
+
+Traversierung von <span class="hljs-keyword">Bäumen: </span>
+<span class="hljs-symbol">    Preoder:</span>
+        Zuerst den Knoten selbst und danch seine Kinder nach links. 
+<span class="hljs-symbol">
+    Postorder:</span>
+        Zuerst <span class="hljs-keyword">die </span>linken Kinknoten, dann <span class="hljs-keyword">die </span>rechten und zuletzt den Knoten selbst.
+<span class="hljs-symbol">
+    Inorder:</span> 
+        Zuerst den linken Kindknoten, dann den Knoten selbst und zuletzt 
+        den rechten Kindknoten
+</code></pre><h3 id="2-bin-reb-ume-">2.) Binärebäume:</h3>
+<pre><code><span class="hljs-keyword">Bei </span><span class="hljs-keyword">einem </span><span class="hljs-keyword">Binärbaum </span>hat <span class="hljs-keyword">jeder </span>Knoten maximal zwei Kindknoten.
+Man kann <span class="hljs-keyword">dies </span>als linken und rechten Kindknoten <span class="hljs-keyword">bezeichnen. </span>
+
+Zusätzlich sollte <span class="hljs-keyword">ein </span>Datenelement an <span class="hljs-keyword">jedem </span>Knoten angehängt sein. 
+</code></pre>
