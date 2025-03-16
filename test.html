@@ -2,7 +2,11 @@
 <hr>
 <h1 id="erste-aufgabe-sortierverfahren">Erste Aufgabe: Sortierverfahren</h1>
 <h3 id="1-insertionsort-">1.) Insertionsort:</h3>
-<pre><code>Tauscht von oben nach unten
+<pre><code>Der Algorithmus <span class="hljs-keyword">betrachtet </span>immer <span class="hljs-keyword">ein </span>Element des Arrays und <span class="hljs-keyword">schaut </span>ob das Element,
+welches vor <span class="hljs-keyword">diesem </span>kommt größer als es ist. 
+Wenn das der Fall ist, dann werden <span class="hljs-keyword">die </span>Elemente getauscht, das läuft so lange ab, 
+<span class="hljs-keyword">bis </span>es nicht mehr tauschen kann.
+Wenn es nicht mehr tauschen kann, dann wird das nächste Elemente <span class="hljs-keyword">betrachtet. </span>
 
 Funktion <span class="hljs-keyword">InsertionSort(A)
 </span>    Für i von <span class="hljs-number">1</span> <span class="hljs-keyword">bis </span>Länge von A - <span class="hljs-number">1</span>: 
@@ -14,7 +18,11 @@ Funktion <span class="hljs-keyword">InsertionSort(A)
 
         Rückgabe A
 </code></pre><h3 id="2-selectionsort-">2.) Selectionsort:</h3>
-<pre><code>Sucht das Minimale Element und Tauscht das unterste mit diesem. 
+<pre><code>Der Algorithmus betrachtet das erste Element des Arrays, dann sucht er das kleinste 
+folgende Element, wenn es kleiner ist als das erste Elemement, dann werden die beiden 
+Elemente getauscht. 
+Der Algorithmus macht dann mit dem nächsten Element weiter bis er das Ende des Arrays 
+erreicht.
 
 Funktion Selectionsort(A)
     Für <span class="hljs-selector-tag">i</span> von <span class="hljs-number">0</span> bis Länge von A-<span class="hljs-number">1</span>:
@@ -29,15 +37,17 @@ Funktion Selectionsort(A)
 
     Rückgabe A
 </code></pre><h3 id="3-bubblesort-">3.) Bubblesort:</h3>
-<pre><code>Tauscht von untent nach oben Elemente durch 
+<pre><code>Der Algorithmus <span class="hljs-keyword">betrachtet </span>immer zwei Elemente und tauscht <span class="hljs-keyword">eines </span>davon nach oben 
+wenn es größer ist. Somit <span class="hljs-keyword">bubblen </span>sich große Elemente wie in <span class="hljs-keyword">Blasen </span>nach oben 
+<span class="hljs-keyword">ins </span>Array. 
 
-Funktion BubbleSort(<span class="hljs-keyword">A</span>)
-    Für i von <span class="hljs-number">1</span> bis Länge von <span class="hljs-keyword">A</span>: 
-        Für j von <span class="hljs-number">0</span> bis Länge von <span class="hljs-keyword">A</span> - <span class="hljs-number">1</span>: 
-            Falls <span class="hljs-keyword">A</span>[j] &gt; <span class="hljs-keyword">A</span>[j+<span class="hljs-number">1</span>]
-                Tausche(<span class="hljs-keyword">A</span>[j], <span class="hljs-keyword">A</span>[j+<span class="hljs-number">1</span>])
-
-    Rückgabe <span class="hljs-keyword">A</span>
+Funktion <span class="hljs-keyword">BubbleSort(A)
+</span>    Für i von <span class="hljs-number">1</span> <span class="hljs-keyword">bis </span>Länge von A: 
+        Für <span class="hljs-keyword">j </span>von <span class="hljs-number">0</span> <span class="hljs-keyword">bis </span>Länge von A - <span class="hljs-number">1</span>: 
+            Falls A[<span class="hljs-keyword">j] </span>&gt; A[<span class="hljs-keyword">j+1]
+</span>                Tausche(A[<span class="hljs-keyword">j], </span>A[<span class="hljs-keyword">j+1])
+</span>
+    Rückgabe A
 </code></pre><hr>
 <h1 id="zweite-aufgabe-abstract-data-types">Zweite Aufgabe: Abstract data types</h1>
 <h3 id="1-verkettete-listen-">1.) Verkettete Listen:</h3>
@@ -50,46 +60,47 @@ speichert und Operationsmethoden implementiert.
 
 Und aus den ListenKnoten&lt;T&gt; Objekten, welche <span class="hljs-keyword">die </span>Daten speichern und 
 auf den nachfolgenden Knoten verweist. 
+
+In <span class="hljs-keyword">einem </span>Klassendiagramm würde man es so zeichnen, dass <span class="hljs-keyword">die </span>Listenknoten&lt;T&gt;
+mit <span class="hljs-keyword">einem </span>Assoziationspfeil auf sich selbst verweisen und <span class="hljs-keyword">die </span>Liste 
+mit dem ersten assoziiert ist.
 </code></pre><h3 id="2-stack-">2.) Stack:</h3>
-<pre><code><span class="hljs-built_in">Stack</span> ist eine besondere Art der Datenstruktur, sie kann als <span class="hljs-built_in">Array</span> 
+<pre><code>Ein <span class="hljs-keyword">Stack</span> ist eine besondere Art der Datenstruktur, er kann als <span class="hljs-keyword">Array</span> 
 oder verkettete Liste implementiert werden, das ist uns aber relativ 
 egal. 
 
-Das Prinzip von einem <span class="hljs-built_in">Stack</span> ist immer gleich, LIFO: Last <span class="hljs-keyword">in</span> first out
-das Element was man zuletzt auf den <span class="hljs-built_in">Stack</span> gepusht hat ist auch das Element 
-welches als erste den <span class="hljs-built_in">Stack</span> wieder verlässt. 
-Man hat <span class="hljs-number">3</span> elementare Operatoren <span class="hljs-built_in">Stack</span><span class="hljs-type">::top</span>(), <span class="hljs-built_in">Stack</span><span class="hljs-type">::pop</span>() und <span class="hljs-built_in">Stack</span><span class="hljs-type">::push</span>()
+Das Prinzip von einem <span class="hljs-keyword">Stack</span> ist immer gleich.
+LIFO: <span class="hljs-string">'Last in first out'</span>, das <span class="hljs-keyword">Element</span>, welches man zuletzt auf den 
+<span class="hljs-keyword">Stack</span> gepusht hat ist auch das <span class="hljs-keyword">Element</span> welches als erste den <span class="hljs-keyword">Stack</span> 
+wieder verlässt. Man hat <span class="hljs-number">3</span> elementare Operatoren:
 
-Mit <span class="hljs-built_in">Stack</span><span class="hljs-type">::top</span>() kann man sich das oberste Element anschauen.
-Mit <span class="hljs-built_in">Stack</span><span class="hljs-type">::pop</span>() bekommt man das oberste Element und es wird aus dem <span class="hljs-built_in">Stack</span> 
-gelöscht. 
-Mit <span class="hljs-built_in">Stack</span><span class="hljs-type">::push</span>() kann man eine neues Element auf den <span class="hljs-built_in">Stack</span> legen. 
-
-Weiter Operatoren sind.
-<span class="hljs-built_in">Stack</span><span class="hljs-type">::isEmpty</span>() gibt zurück ob der <span class="hljs-built_in">Stack</span> ein Element hat. 
+&gt; <span class="hljs-keyword">Stack</span>.top(): &lt;T&gt;            ;Zeigt das oberste <span class="hljs-keyword">Element</span> 
+&gt; <span class="hljs-keyword">Stack</span>.pop(): &lt;T&gt;            ;Zeigt das oberste <span class="hljs-keyword">Element</span> und entfernt es
+&gt; <span class="hljs-keyword">Stack</span>.push(&lt;T&gt;): void       ;Legt eine neues <span class="hljs-keyword">Element</span> auf den <span class="hljs-keyword">Stack</span>
+&gt; <span class="hljs-keyword">Stack</span>.isEmpty(): boolean    ;Zeigt ob ein <span class="hljs-keyword">Stack</span> exisiert
 </code></pre><h3 id="3-queue-">3.) Queue:</h3>
-<pre><code>Selbiges wie oben.
+<pre><code>Eine <span class="hljs-built_in">Queue</span> ist auch eine besondere Datenstruktur, sie kann wie oben 
+als <span class="hljs-built_in">Array</span> oder verkettete Liste implementiert werden, was uns immernoch 
+egal ist.
 
-Das Prinzip von einer <span class="hljs-built_in">Queue</span> ist immer gleich, FIFO: First <span class="hljs-keyword">in</span> First out, 
-das Element welches man als erstes <span class="hljs-keyword">in</span> die <span class="hljs-built_in">Queue</span> getan hat ist auch das, 
-welches man zuerst bearbeiten muss.
+Das Prinzip von einer <span class="hljs-built_in">Queue</span> ist immer gleich.
+FIFO: <span class="hljs-string">'First in First out'</span>, das Element welches man als erstes <span class="hljs-keyword">in</span> die 
+<span class="hljs-built_in">Queue</span> getan hat ist auch das, welches man zuerst bearbeiten muss.
 Man hat wieder ein paar elementare Operatoren. 
 
-Mit <span class="hljs-built_in">Queue</span><span class="hljs-type">::enqueue</span>() können Daten an die <span class="hljs-built_in">Queue</span> gehängt werden. 
-Mit <span class="hljs-built_in">Queue</span><span class="hljs-type">::dequeue</span>() können Daten von der <span class="hljs-built_in">Queue</span> genommen werden. 
+&gt; <span class="hljs-built_in">Queue</span>.enqueue() können Daten an die <span class="hljs-built_in">Queue</span> gehängt werden. 
+&gt; <span class="hljs-built_in">Queue</span>.dequeue() können Daten von der <span class="hljs-built_in">Queue</span> genommen werden. 
 </code></pre><hr>
 <h1 id="dritte-aufgabe-b-ume-">Dritte Aufgabe Bäume:</h1>
 <h3 id="1-b-ume-">1.) Bäume:</h3>
 <pre><code><span class="hljs-keyword">Ein </span><span class="hljs-keyword">Baum </span><span class="hljs-keyword">besitzt </span>im Gegensatz zu Listen <span class="hljs-keyword">eine </span>verzweigte Struktur, <span class="hljs-keyword">eine </span>
-<span class="hljs-keyword">Baumstruktur. </span>
-
-<span class="hljs-keyword">Jedes </span>Element kann mehrere Nachfolgerelement haben, aber nur <span class="hljs-keyword">eine </span>
-Vorgängerelement. 
+<span class="hljs-keyword">Baumstruktur. </span><span class="hljs-keyword">Jedes </span>Element kann mehrere Nachfolgerelement haben, aber 
+nur <span class="hljs-keyword">ein </span>Vorgängerelement.
 <span class="hljs-symbol">
 Besonderheiten:</span> 
-    <span class="hljs-keyword">Die </span>Wurzel des <span class="hljs-keyword">Baumes </span>hat keinen Vorgänger
-    Knoten ohne Nachfolger werden <span class="hljs-keyword">Blätter </span>genannt
-    Knoten, <span class="hljs-keyword">die </span>werde Wurzel noch <span class="hljs-keyword">Blatt </span>sind, heißen innere Knoten
+&gt;    <span class="hljs-keyword">Die </span>Wurzel des <span class="hljs-keyword">Baumes </span>hat keinen Vorgänger
+&gt;    Knoten ohne Nachfolger werden <span class="hljs-keyword">Blätter </span>genannt
+&gt;    Knoten, <span class="hljs-keyword">die </span>werde Wurzel noch <span class="hljs-keyword">Blatt </span>sind, heißen innere Knoten
 
 <span class="hljs-keyword">Ein </span>paar <span class="hljs-keyword">Eigenschaften </span>von <span class="hljs-keyword">Bäumen </span>sollte man sich merken. 
     - Anzahl der Elemente: <span class="hljs-keyword">Jeder </span><span class="hljs-keyword">Baum </span>hat <span class="hljs-number">1</span> Element plus <span class="hljs-keyword">die </span>Anzahl 
@@ -111,4 +122,7 @@ Traversierung von <span class="hljs-keyword">Bäumen: </span>
 Man kann <span class="hljs-keyword">dies </span>als linken und rechten Kindknoten <span class="hljs-keyword">bezeichnen. </span>
 
 Zusätzlich sollte <span class="hljs-keyword">ein </span>Datenelement an <span class="hljs-keyword">jedem </span>Knoten angehängt sein. 
+Man kannn <span class="hljs-keyword">diesen </span>auch als <span class="hljs-keyword">Binärenentscheidungsbaum </span><span class="hljs-keyword">benutzen, </span>der Knoten
+kann hierbei als <span class="hljs-keyword">boolscher </span>Ausdruck gesehen werden, das Traversieren nach 
+rechts <span class="hljs-keyword">bzw. </span>links, als true <span class="hljs-keyword">bzw. </span>false antwort auf den Ausdruck
 </code></pre>

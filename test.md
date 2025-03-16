@@ -5,7 +5,11 @@ Informatikklausur
 # Erste Aufgabe: Sortierverfahren
 
 ### 1.) Insertionsort:
-    Tauscht von oben nach unten
+    Der Algorithmus betrachtet immer ein Element des Arrays und schaut ob das Element,
+    welches vor diesem kommt größer als es ist. 
+    Wenn das der Fall ist, dann werden die Elemente getauscht, das läuft so lange ab, 
+    bis es nicht mehr tauschen kann.
+    Wenn es nicht mehr tauschen kann, dann wird das nächste Elemente betrachtet. 
 
     Funktion InsertionSort(A)
         Für i von 1 bis Länge von A - 1: 
@@ -18,7 +22,11 @@ Informatikklausur
             Rückgabe A
 
 ### 2.) Selectionsort: 
-    Sucht das Minimale Element und Tauscht das unterste mit diesem. 
+    Der Algorithmus betrachtet das erste Element des Arrays, dann sucht er das kleinste 
+    folgende Element, wenn es kleiner ist als das erste Elemement, dann werden die beiden 
+    Elemente getauscht. 
+    Der Algorithmus macht dann mit dem nächsten Element weiter bis er das Ende des Arrays 
+    erreicht.
 
     Funktion Selectionsort(A)
         Für i von 0 bis Länge von A-1:
@@ -34,7 +42,9 @@ Informatikklausur
         Rückgabe A
 
 ### 3.) Bubblesort: 
-    Tauscht von untent nach oben Elemente durch 
+    Der Algorithmus betrachtet immer zwei Elemente und tauscht eines davon nach oben 
+    wenn es größer ist. Somit bubblen sich große Elemente wie in Blasen nach oben 
+    ins Array. 
 
     Funktion BubbleSort(A)
         Für i von 1 bis Länge von A: 
@@ -57,50 +67,51 @@ Informatikklausur
 
     Und aus den ListenKnoten<T> Objekten, welche die Daten speichern und 
     auf den nachfolgenden Knoten verweist. 
+
+    In einem Klassendiagramm würde man es so zeichnen, dass die Listenknoten<T>
+    mit einem Assoziationspfeil auf sich selbst verweisen und die Liste 
+    mit dem ersten assoziiert ist.
     
 ### 2.) Stack: 
-    Stack ist eine besondere Art der Datenstruktur, sie kann als Array 
+    Ein Stack ist eine besondere Art der Datenstruktur, er kann als Array 
     oder verkettete Liste implementiert werden, das ist uns aber relativ 
     egal. 
 
-    Das Prinzip von einem Stack ist immer gleich, LIFO: Last in first out
-    das Element was man zuletzt auf den Stack gepusht hat ist auch das Element 
-    welches als erste den Stack wieder verlässt. 
-    Man hat 3 elementare Operatoren Stack::top(), Stack::pop() und Stack::push()
+    Das Prinzip von einem Stack ist immer gleich.
+    LIFO: 'Last in first out', das Element, welches man zuletzt auf den 
+    Stack gepusht hat ist auch das Element welches als erste den Stack 
+    wieder verlässt. Man hat 3 elementare Operatoren:
 
-    Mit Stack::top() kann man sich das oberste Element anschauen.
-    Mit Stack::pop() bekommt man das oberste Element und es wird aus dem Stack 
-    gelöscht. 
-    Mit Stack::push() kann man eine neues Element auf den Stack legen. 
-
-    Weiter Operatoren sind.
-    Stack::isEmpty() gibt zurück ob der Stack ein Element hat. 
+    > Stack.top(): <T>            ;Zeigt das oberste Element 
+    > Stack.pop(): <T>            ;Zeigt das oberste Element und entfernt es
+    > Stack.push(<T>): void       ;Legt eine neues Element auf den Stack
+    > Stack.isEmpty(): boolean    ;Zeigt ob ein Stack exisiert
 
 ### 3.) Queue:
-    Selbiges wie oben.
+    Eine Queue ist auch eine besondere Datenstruktur, sie kann wie oben 
+    als Array oder verkettete Liste implementiert werden, was uns immernoch 
+    egal ist.
 
-    Das Prinzip von einer Queue ist immer gleich, FIFO: First in First out, 
-    das Element welches man als erstes in die Queue getan hat ist auch das, 
-    welches man zuerst bearbeiten muss.
+    Das Prinzip von einer Queue ist immer gleich.
+    FIFO: 'First in First out', das Element welches man als erstes in die 
+    Queue getan hat ist auch das, welches man zuerst bearbeiten muss.
     Man hat wieder ein paar elementare Operatoren. 
 
-    Mit Queue::enqueue() können Daten an die Queue gehängt werden. 
-    Mit Queue::dequeue() können Daten von der Queue genommen werden. 
+    > Queue.enqueue() können Daten an die Queue gehängt werden. 
+    > Queue.dequeue() können Daten von der Queue genommen werden. 
 
 ---
 # Dritte Aufgabe Bäume: 
 
 ### 1.) Bäume: 
     Ein Baum besitzt im Gegensatz zu Listen eine verzweigte Struktur, eine 
-    Baumstruktur. 
-
-    Jedes Element kann mehrere Nachfolgerelement haben, aber nur eine 
-    Vorgängerelement. 
+    Baumstruktur. Jedes Element kann mehrere Nachfolgerelement haben, aber 
+    nur ein Vorgängerelement.
     
     Besonderheiten: 
-        Die Wurzel des Baumes hat keinen Vorgänger
-        Knoten ohne Nachfolger werden Blätter genannt
-        Knoten, die werde Wurzel noch Blatt sind, heißen innere Knoten
+    >    Die Wurzel des Baumes hat keinen Vorgänger
+    >    Knoten ohne Nachfolger werden Blätter genannt
+    >    Knoten, die werde Wurzel noch Blatt sind, heißen innere Knoten
 
     Ein paar Eigenschaften von Bäumen sollte man sich merken. 
         - Anzahl der Elemente: Jeder Baum hat 1 Element plus die Anzahl 
@@ -124,4 +135,7 @@ Informatikklausur
     Man kann dies als linken und rechten Kindknoten bezeichnen. 
 
     Zusätzlich sollte ein Datenelement an jedem Knoten angehängt sein. 
+    Man kannn diesen auch als Binärenentscheidungsbaum benutzen, der Knoten
+    kann hierbei als boolscher Ausdruck gesehen werden, das Traversieren nach 
+    rechts bzw. links, als true bzw. false antwort auf den Ausdruck
 
