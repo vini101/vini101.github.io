@@ -5,7 +5,8 @@
 	</head>
 
 	<body>
-		<form action='https://backend-lu4v.onrender.com/submit', method='POST'>
+		<p id='submissionCount'>Loading submission count...</p>
+		<form action='https://backend-lu4v.onrender.com/submit', method='POST', target='/test.html'>
 			<p>Name des Teilnehmenden:</p>
 			<input type="text" name="Name" >
 			<p>Vorname des Teilnehmenden:</p>
@@ -16,4 +17,21 @@
 			<button type="submit">Submit</button>
 		</form>
 	</body>
+
+	<script>
+		const backendUrl = 'https://backend-lu4v.onrender.com';
+		
+		async function fetchSubmissionCount() {
+			const res = await fetch(`${backendUrl}/submission-count`);
+			const data = await res.json();
+			const obj = JSON.parse(data.data);
+			const number = obj.length;
+
+			console.log(number);
+
+			document.getElementById("submissionCount").textContent = `Total Submissions: ${number}`;
+		}
+
+		fetchSubmissionCount();
+	</script>
 </html>
