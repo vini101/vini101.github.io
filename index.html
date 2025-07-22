@@ -5,17 +5,32 @@
 	</head>
 
 	<body>
-		<p id='submissionCount'>Loading submission count...</p>
-		<form action='https://backend-lu4v.onrender.com/submit', method='POST'>
-			<p>Name des Teilnehmenden:</p>
-			<input type="text" name="Name" >
-			<p>Vorname des Teilnehmenden:</p>
-			<input type="text" name="Vorname" >
-			<p>E-Mail des Teilnehmenden:</p>
-			<input type="text" name="Mail">
-			<br><br>
-			<button type="submit">Submit</button>
-		</form>
+		<div class="main">
+			<div class="test">
+				<span>Ocean Bewerbung</span>
+			</div>
+			<div class="second-test">
+				<hr>
+				<p id='submissionCount'>Loading submission count...</p>
+				<p class="hinweis">Hinweis: Die Anzahl an Bewerbungen ist auf 50 <br> begrenzt, wenn sie trotzdem eine Absenden <br> kommen sie auf eine Warteliste.</p>
+				<hr>
+				<form action='https://backend-lu4v.onrender.com/submit', method='POST'>
+					<p>Name des Teilnehmenden:</p>
+					<input type="text" name="Name" class="input">
+					<br>
+					<hr>
+					<p>Vorname des Teilnehmenden:</p>
+					<input type="text" name="Vorname" class="input">
+					<br>
+					<hr>
+					<p>E-Mail des Teilnehmenden:</p>
+					<input type="text" name="Mail" class="input">
+					<br>
+					<hr>
+					<button type="submit" class="button">Submit</button>
+				</form>
+			</div>
+		</div>
 	</body>
 
 	<script>
@@ -24,14 +39,13 @@
 		async function fetchSubmissionCount() {
 			const res = await fetch(`${backendUrl}/submission-count`);
 			const data = await res.json();
+			console.log(data);
 			const obj = JSON.parse(data.data);
 			const number = obj.length;
 
-			if (number != undefined) {
-					document.getElementById("submissionCount").textContent = `Total Submissions: ${number}`;
-			} else {
-					document.getElementById("submissionCount").textContent = `Total Submissions: 0`;
-			}
+			console.log(number);
+
+			document.getElementById("submissionCount").textContent = `Total Submissions: ${number}`;
 		}
 
 		fetchSubmissionCount();

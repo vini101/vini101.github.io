@@ -1,0 +1,54 @@
+.main div {
+	float: left; 
+	clear: none;
+}
+
+.test { 
+	writing-mode: vertical-rl;
+  text-orientation: upright;
+	margin-left: 2rem;
+	padding-left: 1rem;
+	margin-right: 2rem;
+	padding-right: 1rem;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	background-color: CornflowerBlue;
+	color: white;
+	border-style: double;
+	font-size: 2.5em;
+}
+
+.second-test {
+	border-style: double;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	font-size: 1.25em;
+}
+
+.input {
+	height: 2rem;
+}
+
+.hinweis {
+	font-size: 0.8em;
+	color: Coral;
+}
+
+.button {
+	width: 5rem;
+	height: 2rem;
+	font-size: 0.8em;
+}
+
+.danke {
+	color: green;
+	font-size: 1em;
+	border-style: solid;
+	float: left; 
+	padding-left: 2rem;
+	padding-right: 2rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
