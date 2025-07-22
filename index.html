@@ -6,7 +6,7 @@
 
 	<body>
 		<p id='submissionCount'>Loading submission count...</p>
-		<form action='https://backend-lu4v.onrender.com/submit', method='POST', target='/test.html'>
+		<form action='https://backend-lu4v.onrender.com/submit', method='POST'>
 			<p>Name des Teilnehmenden:</p>
 			<input type="text" name="Name" >
 			<p>Vorname des Teilnehmenden:</p>
@@ -27,9 +27,11 @@
 			const obj = JSON.parse(data.data);
 			const number = obj.length;
 
-			console.log(number);
-
-			document.getElementById("submissionCount").textContent = `Total Submissions: ${number}`;
+			if (number != undefined) {
+					document.getElementById("submissionCount").textContent = `Total Submissions: ${number}`;
+			} else {
+					document.getElementById("submissionCount").textContent = `Total Submissions: 0`;
+			}
 		}
 
 		fetchSubmissionCount();
