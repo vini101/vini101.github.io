@@ -39,11 +39,7 @@
 		async function fetchSubmissionCount() {
 			const res = await fetch(`${backendUrl}/submission-count`);
 			const data = await res.json();
-			console.log(data);
-			const obj = JSON.parse(data.data);
-			const number = obj.length;
-
-			console.log(number);
+			const number = data.result.rows[0].count - 1; 
 
 			document.getElementById("submissionCount").textContent = `Anzahl an Bewerbungen: ${number}`;
 		}
