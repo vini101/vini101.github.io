@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<link rel="stylesheet" href="styles.css">
+	</head>
 	<body>
 	</body>
 
@@ -12,8 +15,11 @@
 			
 			const body = document.body;
 			const tbl = document.createElement('table');
+			tbl.classList.add("admin-display");
 			
 			tbl.style.border = '1px solid black';
+			
+			data.rows.unshift({name: "Name", vorname: "Vorname", mail: "Mail"});
 			
 			for (let i = 0; i < data.rows.length; i++) {
 				const tr = tbl.insertRow();

@@ -33,7 +33,7 @@
 
 .danke {
 	color: green;
-	font-size: 1em;
+	font-size: 4em;
 	border-style: solid;
 	float: left; 
 	padding-left: 2rem;
@@ -61,4 +61,10 @@
 	padding-right: 2rem;
 	margin: auto;
 	width: 60%;
+}
+
+.admin-display {
+	text-align: center;
+	font-size: 3em;
+	margin: auto;
 }
