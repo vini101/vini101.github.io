@@ -1,21 +1,5 @@
 .main div {
-	float: left; 
 	clear: none;
-}
-
-.test { 
-	writing-mode: vertical-rl;
-  text-orientation: upright;
-	margin-left: 3rem;
-	padding-left: 2rem;
-	margin-right: 3rem;
-	padding-right: 2rem;
-	padding-top: 4rem;
-	padding-bottom: 4rem;
-	background-color: CornflowerBlue;
-	color: white;
-	border-style: double;
-	font-size: 4em;
 }
 
 .second-test {
@@ -25,6 +9,9 @@
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 	font-size: 2.25em;
+	text-align: center;
+	margin: auto;
+	width: 40%;
 }
 
 .input {
@@ -52,4 +39,25 @@
 	padding-right: 2rem;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
+}
+
+.h2 {
+	color: white; 
+	background-color: CornflowerBlue;
+	font-size: 5em;
+	float: center;
+	clear: none;
+	border-style: double;
+	text-align: center;
+}
+
+.footer {
+	text-align: center;
+	border-style: double;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	margin: auto;
+	width: 40%;
 }
