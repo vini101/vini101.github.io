@@ -11,7 +11,7 @@
 			</div>
 			<div class="second-test">
 				<hr>
-				<p id='submissionCount'>Loading submission count...</p>
+				<p id='submissionCount'>Läd Anzahl an Bewerbungen...</p>
 				<p class="hinweis">Hinweis: Die Anzahl an Bewerbungen ist auf 40<br> begrenzt, wenn sie trotzdem eine Absenden,<br> kommen sie auf eine Warteliste.</p>
 				<hr>
 				<form action='https://backend-lu4v.onrender.com/submit', method='POST'>
@@ -45,7 +45,7 @@
 
 			console.log(number);
 
-			document.getElementById("submissionCount").textContent = `Total Submissions: ${number}`;
+			document.getElementById("submissionCount").textContent = `Anzahl an Bewerbungen: ${number}`;
 		}
 
 		fetchSubmissionCount();
